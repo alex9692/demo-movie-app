@@ -11,7 +11,7 @@ exports.createActor = async (req, res, next) => {
 
 exports.getActors = async (req, res, next) => {
   try {
-    const actors = await Actor.find({});
+    const actors = await Actor.find();
     res.status(200).json({ actors });
   } catch (error) {
     return next(error);
