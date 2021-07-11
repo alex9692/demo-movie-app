@@ -13,7 +13,7 @@ const movieSchema = new mongoose.Schema({
 });
 
 movieSchema.pre(/^find/, function (next) {
-  this.populate({path: 'actor', select: 'name -gender'});
+  this.populate({path: 'actor', select: 'name -gender -movie'});
   next();
 });
 
